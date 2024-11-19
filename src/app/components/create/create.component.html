@@ -1,0 +1,47 @@
+<!-- <h1 class="container">create works!</h1> -->
+
+    <br><br>
+
+    <h3 class="container" style="margin-left: 550px; text-shadow: 2px 2px 2px rgb(215, 226, 62); text-decoration: underline;">ADD NEW BOOKS.</h3>
+
+    <br>
+<div style="width: 500px; margin: auto;">
+    <div class="submit form">
+        <!-- UI for book add -->
+
+        <div *ngIf="!isBookAdded">
+
+            <!-- ID field -->
+
+            <div class="form-group">
+                <label for="id">ID:</label>
+                <input type="text" class="form-control" id="id" required name="id" [(ngModel)]="book.id">
+            </div>
+
+            <!-- title field  -->
+
+            <div class="form-group">
+                <label for="title">TITLE:</label>
+                <input type="text" class="form-control" id="TITLE" required name="TITLE" [(ngModel)]="book.title">
+            </div>
+
+            <!-- description feild  -->
+
+            <div class="form-group">
+                <label for="description">DESCRIPTION:</label>
+                <input type="text" class="form-control" id="DESCRIPTION" required name="DESCRIPTION"
+                    [(ngModel)]="book.description">
+
+            </div>
+            <br>
+            <button type="button" class="btn btn-danger" (click)="addBook()">CREATE.</button>
+        </div>
+
+        <div *ngIf="isBookAdded">
+            <h3>New book added..</h3>
+
+            <button type="button" class="btn btn-warning" (click)="newBook()">+ add other</button>
+
+        </div>
+    </div>
+</div>
